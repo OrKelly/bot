@@ -1,0 +1,48 @@
+[tool.poetry]
+name = "bot"
+version = "0.1.0"
+description = ""
+authors = ["Kern"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+aiogram = "^3.19.0"
+aiohttp = "^3.11.14"
+pydantic = "^2.10.6"
+pydantic-settings = "^2.8.1"
+pytz = "^2025.1"
+aiogram-dialog = "^2.3.1"
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.5.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+line-length = 79
+show-fixes = true
+
+[tool.ruff.lint]
+select = [
+    "E",    # pycodestyle errors
+    "W",    # pycodestyle warnings
+    "F",    # pyflakes
+    "B",    # flake8-bugbear
+    "I",    # isort
+    "ICN",  # flake8-import-conventions
+    "PGH",  # pygrep-hooks
+    "PIE",  # flake8-pie
+    "PT",   # flake8-pytest-style
+    "RET",  # flake8-return
+    "T20",  # flake8-print
+    "UP",   # pyupgrade
+    "YTT",  # flake8-2020
+]
+extend-ignore = ["E501", "B904", "F811"]
+
+
+[tool.ruff.format]
+quote-style = "double"
